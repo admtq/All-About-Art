@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profil</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <h1><a href="home_after_login.php">All About Art</a></h1>
+        </nav>
+    </header>
+
+    <section class="edit-profile">
+        <div class="edit-profile-container">
+            <!-- Profile Picture Section -->
+            <div class="profile-pic-container">
+                <div class="profile-pic">
+                    <img src="New Folder/vincent.jpg" alt="Profile Picture">
+                </div>
+                <label for="profile-picture-upload" class="camera-icon">
+                    <i class="fas fa-camera"></i>
+                </label>
+                <input type="file" id="profile-picture-upload" name="profile-picture" style="display: none;">
+            </div>
+
+            <!-- Edit Form Section -->
+            <form action="update_profile.php" method="POST" class="edit-form">
+                <input type="text" name="name_user" placeholder="Nama Akun" value="Nama Akun Anda" required>
+                <input type="text" name="description" placeholder="Deskripsi" value="Deskripsi Anda" required>
+                <input type="text" name="phone_number" placeholder="Nomor Telepon" value="Nomor Telepon Anda" required>
+                <button type="submit" name="save_profile">Simpan</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 All About Art. Semua Hak Dilindungi.</p>
+    </footer>
+</body>
+<style>
+/* Basic Styling */
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
+
+/* Header */
+header {
+    background-color: #3C0753;
+    padding: 15px 20px;
+    text-align: center;
+}
+
+header h1 a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Edit Profile Section */
+.edit-profile {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.edit-profile-container {
+    text-align: center;
+}
+
+/* Profile Picture Section */
+.profile-pic-container {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    border: 2px solid #ddd;
+}
+
+.profile-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Camera Icon */
+.camera-icon {
+    position: absolute;
+    bottom: -10px; /* Geser keluar lingkaran */
+    right: 10px;
+    background-color: #3C0753;
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 16px;
+    cursor: pointer;
+    z-index: 2; /* Pastikan berada di atas gambar */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border: 2px solid white; /* Tambahkan border agar lebih jelas */
+}
+
+.camera-icon:hover {
+    background-color: #910A67;
+}
+
+/* Edit Form */
+.edit-form input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.edit-form button {
+    width: 90%;
+    padding: 10px;
+    background-color: #3C0753;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.edit-form button:hover {
+    background-color: #002f3b;
+}
+
+/* Footer */
+footer {
+    background-color: #030637;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+</style>
+</html>

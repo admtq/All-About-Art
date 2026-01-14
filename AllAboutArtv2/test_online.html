@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Pemesanan</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1><a href="home_after_login.php">All About Art</a></h1>
+            <a href="fotografi_list.php">Fotografi</a>
+            <a href="videografi_list.php">Videografi</a>
+            <a href="vector_list.php">Vector</a>
+            <a href="animasi_list.php">Animasi</a>
+            <a href="profile.php">Profil</a>
+        </nav>
+    </header>
+
+    <!-- Detail Pemesanan Section -->
+    <section class="order-details">
+        <div class="order-container">
+            <h2>Detail Pemesanan</h2>
+
+            <!-- Gambar Postingan -->
+            <?php if (!empty($order['image_url'])): ?>
+                <div class="image-container">
+                    <img src="<?php echo htmlspecialchars($order['image_url']); ?>" alt="Gambar Postingan" />
+                </div>
+            <?php else: ?>
+                <p>Gambar tidak tersedia.</p>
+            <?php endif; ?>
+
+            <table>
+                <tr>
+                    <th>Judul Postingan</th>
+                    <td><?php echo htmlspecialchars($order['judul_postingan']); ?></td>
+                </tr>
+                <tr>
+                    <th>Harga</th>
+                    <td>Rp <?php echo number_format($order['harga'], 0, ',', '.'); ?></td>
+                </tr>
+            </table>
+
+            <div class="button-container">
+                <button onclick="history.back()">Kembali</button>
+                <button onclick="location.href='https://wa.me/1234567890'">Hubungi Penjual</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 All About Art. Semua Hak Dilindungi.</p>
+    </footer>
+</body>
+
+<style>
+    /* Basic Styling */
+    body {
+        font-family: 'Montserrat', sans-serif;
+        margin: 0;
+        background-color: #f4f4f4;
+    }
+
+    header {
+        background-color: #3C0753;
+        padding: 15px 20px;
+    }
+
+    h1 {
+        color: white;
+        margin: 0;
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    nav a {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        padding: 5px 10px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+    nav a:hover {
+        background-color: #910A67;
+    }
+
+    /* Detail Pemesanan Section */
+    .order-details {
+        margin: 40px auto;
+        max-width: 600px;
+        background-color: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .order-container h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .image-container {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .image-container img {
+        max-width: 100%;
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+    }
+
+    table th, table td {
+        text-align: left;
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    table th {
+        background-color: #f9f9f9;
+        font-weight: bold;
+    }
+
+    table td {
+        color: #555;
+    }
+
+    .button-container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .button-container button {
+        width: 48%;
+        padding: 10px;
+        background-color: #3C0753;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .button-container button:hover {
+        background-color: #910A67;
+    }
+
+    footer {
+        background-color: #030637;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        margin-top: 40px;
+    }
+</style>
+</html>
